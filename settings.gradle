@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "TestingMovieAPI"
+rootProject.name = "My Application"
