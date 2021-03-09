@@ -1,4 +1,4 @@
-package com.project300.movieswipe;
+package com.project300.SearchTMDBMovie;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.project300.movieswipe", appContext.getPackageName());
+        assertEquals("com.project300.SearchTMDBMovie", appContext.getPackageName());
     }
 }

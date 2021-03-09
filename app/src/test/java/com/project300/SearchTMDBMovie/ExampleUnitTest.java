@@ -1,4 +1,4 @@
-package com.project300.movieswipe;
+package com.project300.SearchTMDBMovie;
 
 import org.junit.Test;
 
