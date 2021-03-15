@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+   android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="cursive"
+        android:text="MOVIEDECK"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#F44336"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <ListView
+        android:id="@+id/lvWishlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:background="#43FFFCFC" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="50dp"
+        android:text="WISH LIST"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="114dp"
+        android:layout_height="84dp"
+        app:srcCompat="@drawable/logo"
+        android:clickable="true"
+        android:onClick="goHome"/>
+
+</RelativeLayout>

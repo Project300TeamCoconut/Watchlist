@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0ee57ee-cd97-4aec-9851-75ca10cdca6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/project300/movieswipe/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/project300/movieswipe/MainActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="a0ee57ee-cd97-4aec-9851-75ca10cdca6d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,5 +109,11 @@
       <updated>1615239156360</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="691" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1615320289593">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="691" y="239" key="com.intellij.ide.util.TipDialog/0.23.1440.813@0.23.1440.813" timestamp="1615320289593" />
   </component>
 </project>

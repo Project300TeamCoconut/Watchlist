@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "SearchTMDBMovie"
+rootProject.name = "My Application"
