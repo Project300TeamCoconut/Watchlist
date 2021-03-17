@@ -10,12 +10,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class WishListActivity extends AppCompatActivity {
     ListView mlistView;
+    FirebaseUser currentUser;
+    private String currentUserID, currentMovie;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mMatchesAdapter;
@@ -25,10 +32,18 @@ public class WishListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list2);
 
+        currentUser = FirebaseAuth.getInstance().getCurrentUser() ;
 
-        ArrayList<String> myWishList = (ArrayList<String>) getIntent().getSerializableExtra("mylist");
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null){
+            currentUserID = user.getUid();
+        }
+
+        ArrayList<String> myWishList = (ArrayList<String>) getIntent().getSerializableExtra("myWatchlist");
 
         mlistView  = (ListView) findViewById(R.id.lvWishlist);
+
 
         // String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
         // "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
@@ -60,6 +75,29 @@ public class WishListActivity extends AppCompatActivity {
                                 myWishList.remove(item);
                                 adapter.notifyDataSetChanged();
                                 view.setAlpha(1);
+
+                                //remove a movie from watchlist
+
+                                currentMovie = item;
+
+
+                              // DatabaseReference usersDb = FirebaseDatabase.getInstance().getReference().child("Users")
+                                     //   .child("WatchList");
+                                       //.child(FilmName).setValue(null);
+
+                               //Zahra userID
+                               // String userID = "6RgUv98bTGZ3iylhHGQEMoTA0Ni2";
+
+                                String userID = currentUserID;
+
+                                DatabaseReference userDb = FirebaseDatabase.getInstance().getReference().child("Users")
+                                        .child(userID).child("connections").child("WatchList");
+
+                                DatabaseReference driverRef = userDb.child(currentMovie);
+                                driverRef.removeValue();
+
+
+
                             }
                         });
             }

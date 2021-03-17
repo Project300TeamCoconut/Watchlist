@@ -139,7 +139,9 @@ public class MainActivity extends AppCompatActivity {
                     MovieModelClass items = (MovieModelClass) dataObject;
                     FilmName = items.getName();
                     //male
-                    usersDb.child(currentUId).child("connections").child("nope").child(FilmName).setValue(true);
+                  usersDb.child(currentUId).child("connections").child("nope").child(FilmName).setValue(true);
+
+
 
                 Toast.makeText(MainActivity.this, "left", Toast.LENGTH_SHORT).show();
             }
@@ -186,19 +188,20 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClicked(int itemPosition, Object dataObject) {
                 Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
 
-                //  final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                // if(user != null){
-                //    currentUId = user.getUid();
-                //   }
+                 if(user != null){
+                    currentUId = user.getUid();
+                   }
 
                 MovieModelClass items = (MovieModelClass) dataObject;
                 FilmName = items.getName();
-                usersDb.child("Male").child(currentUId).child("connections").child("yep").child(FilmName).setValue(true);
+
+               //save movie name to firebase in watchlist 
+                usersDb.child(currentUId).child("connections").child("WatchList").child(FilmName).setValue(true);
 
                 isConnectionMatch(currentUId, dataObject);
 
-                Toast.makeText(MainActivity.this, "btn click", Toast.LENGTH_SHORT).show();
 
                 //add movie name to the list
                 // myList.add(FilmName);
@@ -263,7 +266,8 @@ public class MainActivity extends AppCompatActivity {
     public void goToWishList(View view) {
        Intent intent = new Intent(getApplicationContext(), WishListActivity.class);
 
-        intent.putExtra("mylist", myWishList);
+       //pass the myWishList to the wish list activity
+        intent.putExtra("myWatchlist", myWishList);
         startActivity(intent);
     }
 
@@ -361,14 +365,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         return;
     }
-   // public void goToWishList(View view) {
-        //Intent intent = new Intent(getApplicationContext(), WishList.class);
-       // Intent intent = new Intent(MainActivity.this, WishList.class);
-      //  intent.putExtra("mylist", myList);
-     //   startActivity(intent);
-
-   // }
-
 
     public void checkUserSex() {
 
